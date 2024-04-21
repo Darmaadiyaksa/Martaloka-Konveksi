@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/flipbook.style.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+
+<script src="js/three.min.js"></script>
+<script src="js/pdf.min.js"></script>
+<script src="js/iscroll.min.js"></script>
+<script src="js/flipbook.min.js"></script>
+<script src="js/flipbook.pdfservice.min.js"></script>
+<script src="js/flipbook.book3.min.js"></script>
+<script src="js/flipbook.webgl.min.js"></script>
+<script src="js/flipbook.swipe.min.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#container").flipBook({
+
+            pdfUrl:"pdf/book2.pdf"
+
+        });
+
+    })
+</script>
+
+</head>
+
+<body>
+<div id="container">
+   
+</div>
+
+</body>
+
+</html>

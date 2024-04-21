@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+	<title>Real3D Flipbook - jQuery plugin</title>
+ 	<meta name="description" content="">
+	<meta name="author" content="creativeinteractivemedia">
+	<meta name="copyright" content="creativeinteractivemedia">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2019-03-05T00:00:00+01:00">
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/documenter_style.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    
+	
+	<style>
+		html, body{background-color:#FFFFFF;color:#383838;}
+		h1,h2,h3,h4,h5,h6{color:#383838;}
+		section table{background-color:#FFFFFF;}
+		::-moz-selection{background:#444444;color:#DDDDDD;}
+		::selection{background:#444444;color:#DDDDDD;}
+		a.brand{background-image:url();}
+		a, a:hover, a:active{color:#0088CC;}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #AAAAAA;}
+		div.navbar-inner, .navbar .nav li ul{background:#DDDDDD;color:#222222;}
+		a.btn-navbar{background:#DDDDDD;color:#222222;}
+		.navbar .nav li a{color:#222222;text-shadow:1px 1px 0px #EEEEEE;}
+		.navbar .nav li a:hover, .navbar .nav li.active a{text-shadow:none;}
+		div.navbar-inner ul{}
+		.marketing-byline{color:#AAAAAA;}
+		.navbar .nav > li a{color:#444444;}
+		.navbar .nav > li a:hover, a.btn-navbar:hover{background:#444444;color:#DDDDDD;}
+		.navbar .nav .active > a, .navbar .nav .active > a:hover, a.btn-navbar:active{background-color:#444444;color:#DDDDDD;}
+		.navbar .nav li ul li a:hover{background:#444444;color:#DDDDDD;}
+		.navbar .nav li ul li a:active{background:#444444;color:#DDDDDD;}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -ms-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -webkit-gradient(linear, 0 0, 0 0088CC%, from(#DDDDDD), to(#0044CC));
+			  background-image: -webkit-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -o-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: linear-gradient(top, #0088CC, #0044CC);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088CC', endColorstr='#0044CC', GradientType=0);
+			  border-color: #0044CC #0044CC #bfbfbf;
+			  color:#0088CC;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  background-color: #0044CC;
+		}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+	
+	
+    </head>
+    
+<body class="documenter-project-real3d-flipbook" data-spy="scroll" id="top">
+
+<!-- Documentation Navbar -->
+
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container"> 
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> 
+			<a class="brand" href="#">Real3D Flipbook - jQuery plugin</a>
+			<div class="nav-collapse">
+			<ul class="nav">
+					
+			<li><a href="#special_notes" title="Special notes">Special notes</a>
+				<ul>
+					<li><a href="#special_notes_running_things_locally">Running things locally</a>
+				</ul>
+			</li>
+			<li><a href="#directories_and_files" title="Directories and files">Directories and files</a></li>
+			<li><a href="#getting_started" title="Getting started">Getting started</a>
+				<ul>
+					<li><a href="#getting_started_examples">Examples</a>
+					<li><a href="#getting_started_plugin_usage">Plugin usage</a>
+					<li><a href="#getting_started_pdf_flipbook">PDF Flipbook</a>
+					<li><a href="#getting_started_jpg_flipbook">JPG Flipbook</a>
+					<li><a href="#getting_started_customizing_the_viewer">Customizing the viewer</a>
+				</ul>
+			</li>
+			<li><a href="#general_options" title="General options">General options</a>
+				<ul>
+					<li><a href="#general_options_optionspdfurl_string">options.pdfUrl [String]</a>
+					<li><a href="#general_options_optionspages_array">options.pages [Array]</a>
+					<li><a href="#general_options_optionspagetexturesize_number">options.pageTextureSize [Number]</a>
+					<li><a href="#general_options_optionspagetexturesizesmall_number">options.pageTextureSizeSmall [Number]</a>
+					<li><a href="#general_options_optionspagetexturesizetreshold_number">options.pageTextureSizeTreshold [Number]</a>
+					<li><a href="#general_options_optionsmobile_object">options.mobile [Object]</a>
+					<li><a href="#general_options_optionsstartpage_number">options.startPage [Number]</a>
+					<li><a href="#general_options_optionsdeeplinkingprefix_string">options.deeplinkingPrefix [String]</a>
+					<li><a href="#general_options__nbsp">&nbsp;</a>
+					<li><a href="#general_options_optionsrighttoleft_boolean">options.rightToLeft [Boolean]</a>
+					<li><a href="#general_options_optionsthumbsize_number">options.thumbSize [Number]</a>
+					<li><a href="#general_options_optionsautoplayonstart_boolean">options.autoplayOnStart [Boolean]</a>
+					<li><a href="#general_options_optionsautoplayinterval_number">options.autoplayInterval [Number]</a>
+					<li><a href="#general_options_optionstableofcontent_array">options.tableOfContent [Array]</a>
+					<li><a href="#general_options_optionslightbox_boolean">options.lightBox [Boolean]</a>
+					<li><a href="#general_options_optionslightboxopened_boolean">options.lightBoxOpened [Boolean]</a>
+					<li><a href="#general_options_optionslightboxfullscreen_boolean">options.lightBoxFullscreen [Boolean]</a>
+					<li><a href="#general_options_optionslightboxresetonopen_boolean">options.lightboxResetOnOpen [Boolean]</a>
+					<li><a href="#general_options_optionslightboxbackground_string">options.lightboxBackground [String]</a>
+					<li><a href="#general_options_optionslightboxstartpage_number">options.lightboxStartPage [Number]</a>
+				</ul>
+			</li>
+			<li><a href="#menu_buttons" title="Menu buttons">Menu buttons</a>
+				<ul>
+					<li><a href="#menu_buttons_buttonenabled_boolean">button.enabled [Boolean]</a>
+					<li><a href="#menu_buttons_buttontitle_string">button.title [String]</a>
+					<li><a href="#menu_buttons_buttonicon_string">button.icon [String]</a>
+					<li><a href="#menu_buttons_buttonicon2_string">button.icon2 [String]</a>
+					<li><a href="#menu_buttons_buttoniconalt_string">button.iconAlt [String]</a>
+					<li><a href="#menu_buttons_buttoniconalt2_string">button.iconAlt2 [String]</a>
+					<li><a href="#menu_buttons_buttonhalign_string">button.hAlign [String]</a>
+					<li><a href="#menu_buttons_buttonvalign_string">button.vAlign [String]</a>
+					<li><a href="#menu_buttons_buttonorder_number">button.order [Number]</a>
+					<li><a href="#menu_buttons_buttonhideonmobile_boolean">button.hideOnMobile [Boolean]</a>
+					<li><a href="#menu_buttons_optionscurrentpage_nbsp_nbsp">options.currentPage&nbsp;&nbsp;</a>
+					<li><a href="#menu_buttons_optionsbtnnext_nbsp_nbsp">options.btnNext&nbsp;&nbsp;</a>
+					<li><a href="#menu_buttons_optionsbtnlast">options.btnLast</a>
+					<li><a href="#menu_buttons_optionsbtnprev">options.btnPrev</a>
+					<li><a href="#menu_buttons_optionsbtnfirst">options.btnFirst</a>
+					<li><a href="#menu_buttons_optionsbtnzoomin">options.btnZoomIn</a>
+					<li><a href="#menu_buttons_optionsbtnzoomout">options.btnZoomOut</a>
+					<li><a href="#menu_buttons_optionsbtnrotateleft">options.btnRotateLeft</a>
+					<li><a href="#menu_buttons_optionsbtnrotateright">options.btnRotateRight</a>
+					<li><a href="#menu_buttons_optionsbtnautoplay">options.btnAutoplay</a>
+					<li><a href="#menu_buttons_optionsbtnsearch">options.btnSearch</a>
+					<li><a href="#menu_buttons_optionsbtnselect">options.btnSelect</a>
+					<li><a href="#menu_buttons_optionsbtnbookmark">options.btnBookmark</a>
+					<li><a href="#menu_buttons_optionsbtntoc">options.btnToc</a>
+					<li><a href="#menu_buttons_optionsbtnthumbs">options.btnThumbs</a>
+					<li><a href="#menu_buttons_optionsbtnshare">options.btnShare</a>
+					<li><a href="#menu_buttons_optionsbtnprint">options.btnPrint</a>
+					<li><a href="#menu_buttons_optionsbtndownloadpages">options.btnDownloadPages</a>
+					<li><a href="#menu_buttons_optionsbtndownloadpdf">options.btnDownloadPdf</a>
+					<li><a href="#menu_buttons_optionsbtnsound">options.btnSound</a>
+					<li><a href="#menu_buttons_optionsbtnexpand">options.btnExpand</a>
+					<li><a href="#menu_buttons_optionsbtnclose">options.btnClose</a>
+				</ul>
+			</li>
+			<li><a href="#share_buttons" title="Share buttons">Share buttons</a>
+				<ul>
+					<li><a href="#share_buttons_optionsgoogle_plus">options.google_plus</a>
+					<li><a href="#share_buttons_optionstwitter">options.twitter</a>
+					<li><a href="#share_buttons_optionsfacebook">options.facebook</a>
+					<li><a href="#share_buttons_optionspinterest">options.pinterest</a>
+					<li><a href="#share_buttons_optionsemail">options.email</a>
+				</ul>
+			</li>
+			<li><a href="#ui" title="UI">UI</a>
+				<ul>
+					<li><a href="#ui_optionslayout_number">options.layout [Number]</a>
+					<li><a href="#ui_optionsicons_string">options.icons [String]</a>
+					<li><a href="#ui_optionsbackgroundcolor_string">options.backgroundColor [String]</a>
+					<li><a href="#ui_optionsbackgroundimage_string">options.backgroundImage [String]</a>
+					<li><a href="#ui_optionsbackgroundpattern_string">options.backgroundPattern [String]</a>
+					<li><a href="#ui_optionsbackgroundtransparent_boolean">options.backgroundTransparent [Boolean]</a>
+					<li><a href="#ui_optionsskin_string">options.skin [String]</a>
+					<li><a href="#ui_optionssidenavigationbuttons_boolean">options.sideNavigationButtons [Boolean]</a>
+					<li><a href="#ui_optionshidemenu_boolean">options.hideMenu [Boolean]</a>
+					<li><a href="#ui_optionsmenumargin_string">options.menuMargin [String]</a>
+					<li><a href="#ui_optionsmenupadding_string">options.menuPadding [String]</a>
+					<li><a href="#ui_optionsmenushadow_string">options.menuShadow [String]</a>
+					<li><a href="#ui_optionsmenubackground_string">options.menuBackground [String]</a>
+					<li><a href="#ui_optionsmenuoverbook_boolean">options.menuOverBook [Boolean]</a>
+					<li><a href="#ui_optionsmenutransparent_boolean">options.menuTransparent [Boolean]</a>
+					<li><a href="#ui_optionsmenufloating_boolean">options.menuFloating [Boolean]</a>
+					<li><a href="#ui_optionsmenu2margin_string">options.menu2Margin [String]</a>
+					<li><a href="#ui_optionsmenu2padding_string">options.menu2Padding [String]</a>
+					<li><a href="#ui_optionsmenu2shadow_string">options.menu2Shadow [String]</a>
+					<li><a href="#ui_optionsmenu2background_string">options.menu2Background [String]</a>
+					<li><a href="#ui_optionsmenu2overbook_boolean">options.menu2OverBook [Boolean]</a>
+					<li><a href="#ui_optionsmenu2transparent_boolean">options.menu2Transparent [Boolean]</a>
+					<li><a href="#ui_optionsmenu2floating_boolean">options.menu2Floating [Boolean]</a>
+					<li><a href="#ui_optionsbtnorder_array">options.btnOrder [Array]</a>
+					<li><a href="#ui_optionsbtnsize_number">options.btnSize [Number]</a>
+					<li><a href="#ui_optionsbtnradius_number">options.btnRadius [Number]</a>
+					<li><a href="#ui_optionsbtnmargin_number">options.btnMargin [Number]</a>
+					<li><a href="#ui_optionsbtnshadow_string">options.btnShadow [String]</a>
+					<li><a href="#ui_optionsbtntextshadow_string">options.btnTextShadow [String]</a>
+					<li><a href="#ui_optionsbtnborder_string">options.btnBorder [String]</a>
+					<li><a href="#ui_optionsbtncolor_string">options.btnColor [String]</a>
+					<li><a href="#ui_optionsbtnbackground_string">options.btnBackground [String]</a>
+					<li><a href="#ui_optionssidebtnsize_number">options.sideBtnSize [Number]</a>
+					<li><a href="#ui_optionssidebtnradius_number">options.sideBtnRadius [Number]</a>
+					<li><a href="#ui_optionssidebtnmargin_number">options.sideBtnMargin [Number]</a>
+					<li><a href="#ui_optionssidebtnpaddingv_number">options.sideBtnPaddingV [Number]</a>
+					<li><a href="#ui_optionssidebtnpaddingh_number">options.sideBtnPaddingH [Number]</a>
+					<li><a href="#ui_optionssidebtnshadow_string">options.sideBtnShadow [String]</a>
+					<li><a href="#ui_optionssidebtntextshadow_string">options.sideBtnTextShadow [String]</a>
+					<li><a href="#ui_optionssidebtnborder_string">options.sideBtnBorder [String]</a>
+					<li><a href="#ui_optionssidebtncolor_string">options.sideBtnColor [String]</a>
+					<li><a href="#ui_optionssidebtnbackground_string">options.sideBtnBackground [String]</a>
+					<li><a href="#ui_optionssidemenuoverbook_boolean">options.sideMenuOverBook [Boolean]</a>
+					<li><a href="#ui_optionssidemenuovermenu_boolean">options.sideMenuOverMenu [Boolean]</a>
+					<li><a href="#ui_optionssidemenuovermenu2_boolean">options.sideMenuOverMenu2 [Boolean]</a>
+				</ul>
+			</li>
+			<li><a href="#adding_custom_html_content_to_pages" title="Adding custom HTML content to pages">Adding custom HTML content to pages</a></li>
+			<li><a href="#faq" title="FAQ">FAQ</a>
+				<ul>
+					<li><a href="#faq_can_i_load_a_pdf_images_from_another_server_cross_domain_request_">Can I load a PDF/images from another server (cross domain request)?</a>
+					<li><a href="#faq_flipbook_is_not_working">Flipbook is not working</a>
+					<li><a href="#faq_mixed_content_error_in_browser_console">Mixed content error in browser console</a>
+				</ul>
+			</li>
+
+			</ul>
+			</div>
+		</div>
+	</div>
+</div> <!-- End of Navbar -->
+
+<!-- Main Container Beginning -->			
+			
+<div class="container" id="documenter_content">
+    
+	<div id="documenter-cover">
+	<div class="masthead">
+	    <h1>Real3D Flipbook - jQuery plugin</h1>
+	    <p></p>
+	    <ul class="marketing-byline">
+			<li>created: 03/14/2013</li>
+			<li>latest update: 03/05/2019</li>
+			<li>by: creativeinteractivemedia</li>
+			<li><a href="http://codecanyon.net/user/creativeinteractivemedia">codecanyon.net/user/creativeinteractivemedia</a></li>
+		</ul>
+	    <p class="download-info">
+			
+		</p>
+		
+	</div> <!-- masthead -->
+	
+   <div id="intro">
+    <p class="highlight hero-unit">Thank you for purchasing Real3D FlipBook. If you have any questions that are beyond the scope of this help file, please feel free to email via my profile page contact form here http://codecanyon.net/user/creativeinteractivemedia. Thanks so much!</p>
+   </div> <!-- intro -->
+   
+	</div>
+      
+  <section id="special_notes">
+	<div class="page-header"><h3>Special notes</h3><hr class="notop"></div>
+<h4 id="special_notes_running_things_locally">Running things locally</h4>
+<p>
+	Due to local security restrictions, some things will not work locally, especially in Chrome.&nbsp; But everything will work once the files have been updated to your website. I recommend testing in Firefox as is more lenient toward local iframe security.&nbsp;</p>
+<p>
+	To run locally in Chrome you need to start Google Chrome with local file access&nbsp;</p>
+<ol>
+	<li>
+		close all instances of Chrome</li>
+	<li>
+		click Start</li>
+	<li>
+		type in &quot;run&quot; (without quotes) and hit enter</li>
+	<li>
+		copy paste this line and hit enter:</li>
+</ol>
+<p>
+	chrome --allow-file-access-from-files</p>
+<div>
+	&nbsp;</div>
+<h5>
+	&nbsp;</h5>
+<script>
+</script><script>
+</script><script>
+</script><script>
+</script><script>
+</script><script>
+</script></section>
+<section id="directories_and_files">
+	<div class="page-header"><h3>Directories and files</h3><hr class="notop"></div>
+<p>	In your <strong>main</strong> downloaded folder<strong>&nbsp;</strong>from CodeCanyon you&#39;ll find the following structure:</p>
+<p>	<strong>deploy </strong>- contains ready to use templates with minified javascript files</p>
+<p>	<strong>source </strong>- contains unminified source files</p>
+<script>
+</script><script>
+</script></section>
+<section id="getting_started">
+	<div class="page-header"><h3>Getting started</h3><hr class="notop"></div>
+<h4 id="getting_started_examples">Examples</h4>
+<p class="plain">
+	The best way is to start modifying one of the HTML examples from the <strong>deploy </strong>folder.</p>
+<p class="plain">
+	&nbsp;</p>
+<h4 id="getting_started_plugin_usage">Plugin usage</h4>
+<p class="plain">
+	Call the plugin with an options object as an argument. Options object needs to have pdfUrl or pages array</p>
+<pre class="prettyprint lang-js linenums" style="background-image: url(&quot;../../_img/pre_bg.png&quot;);">
+$(&quot;#book1&quot;).flipBook(options)</pre>
+<p>	&nbsp;</p>
+<h4 id="getting_started_pdf_flipbook">PDF Flipbook</h4>
+<p>	Initiate the plugin with pdfUrl in options object, like this</p>
+<pre class="prettyprint lang-js linenums" style="background-image: url(&quot;../../_img/pre_bg.png&quot;);">
+$(document).ready(function () {
+  $(&quot;#book1&quot;).flipBook({
+    pdfUrl:&#39;pdf/book2.pdf&#39;
+  })
+})</pre>
+<p class="plain">
+	&nbsp;</p>
+<h4 id="getting_started_jpg_flipbook">JPG Flipbook</h4>
+<p class="plain">
+	Flipbook can be also used with images In this case you need to have array of pages in the options object.&nbsp;<span style="font-size: 12px;">Each page object needs to have &quot;src&quot;. For thumbnaill view each page needs to have &quot;thumb&quot;. Each page can have &quot;title&quot; that will show in table of content.</span></p>
+<pre class="prettyprint lang-js linenums">
+$(document).ready(function () {
+  $(&quot;#book1&quot;).flipBook({
+    pages:[
+      {src:&quot;images/book1/page1.jpg&quot;, thumb:&quot;images/book1/thumb1.jpg&quot;, title:&quot;Cover&quot;},
+      {src:&quot;images/book1/page2.jpg&quot;, thumb:&quot;images/book1/thumb2.jpg&quot;, title:&quot;Page two&quot;},
+      {src:&quot;images/book1/page3.jpg&quot;, thumb:&quot;images/book1/thumb3.jpg&quot;, title:&quot;Page three&quot;},
+      {src:&quot;images/book1/page4.jpg&quot;, thumb:&quot;images/book1/thumb4.jpg&quot;, title:&quot;End&quot;}
+    ]
+<span style="font-family: Arial, Verdana, sans-serif;">  }</span>);
+})</pre>
+<div>
+	&nbsp;</div>
+<h4 id="getting_started_customizing_the_viewer">Customizing the viewer</h4>
+<div>
+	You can customize the viewer with plugin options, for example:</div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre class="prettyprint lang-js linenums">
+$(document).ready(function () {
+  $(&quot;#book1&quot;).flipBook({
+    pdfUrl:&#39;pdf/book2.pdf&#39;,
+    skin:&quot;dark&quot;,
+    btnSize:20,
+    backgroundColor:&quot;#666&quot;,
+    zoomMin:0.9,
+  })
+})</pre>
+</div>
+<p class="plain">
+	&nbsp;</p>
+<p class="plain">
+	List of all available options is in the following chapter.</p>
+<script>
+</script><script>
+</script><script>
+</script><script>
+</script><script>
+</script><script>
+</script><script>
+</script><script>
+</script><script>
+</script></section>
+<section id="general_options">
+	<div class="page-header"><h3>General options</h3><hr class="notop"></div>
+<h4 id="general_options_optionspdfurl_string">options.pdfUrl [String]</h4>
+<p>	Url to source PDF file</p>
+<h4 id="general_options_optionspages_array">options.pages [Array]</h4>
+<p>	Array of page objects. If not defined then options.pdfUrl is required. If options.pdfUrl is defined then page images and thumbnails will be generated from pdf, but page titles and page htmlContent will be read from options.pages</p>
+<pre class="prettyprint lang-js linenums" style="background-image: url(&quot;../../_img/pre_bg.png&quot;);">
+[
+{
+  src:&#39;images/book1/page1.jpg&#39;,
+  thumb:&#39;images/book1/thumb1.jpg&#39;,
+  title:&#39;First page&#39;,
+  htmlContent:&#39;&lt;idiv style=&quot;...&quot;&gt;&lt;/div&gt;&#39;
+},
+{
+  src:&#39;images/book1/page2.jpg&#39;,
+  thumb:&#39;images/book1/thumb22.jpg&#39;,
+  title:&#39;&#39;,
+  htmlContent:&#39;&lt;idiv style=&quot;...&quot;&gt;&lt;/div&gt;&#39;
+},
+{
+  src:&#39;images/book1/page3.jpg&#39;,
+  thumb:&#39;images/book1/thumb3.jpg&#39;,
+  title:&#39;Page 3&#39;,
+  htmlContent:&#39;&lt;idiv style=&quot;...&quot;&gt;&lt;/div&gt;&#39;
+},
+...
+]</pre>
+<h5>
+	page.src [String]</h5>
+<p>	Url to page image</p>
+<h5>
+	page.thumb [String]</h5>
+<p>	Url to page thumbnail</p>
+<h5>
+	page.title [String]</h5>
+<p>	Title of the page that will be displayed in table of content</p>
+<h5>
+	page.htmlContent [String]</h5>
+<p>	HTML that will be added on top of the page. Here you can add any HTML, for exmaple an iframe with youtube video or an overlay click area.&nbsp;</p>
+<p>	&nbsp;</p>
+<h4 id="general_options_optionspagetexturesize_number">options.pageTextureSize [Number]</h4>
+<p>	full size of pages rendered from PDF, when book is large or zoomed, default : 2048</p>
+<p>	&nbsp;</p>
+<h4 id="general_options_optionspagetexturesizesmall_number">options.pageTextureSizeSmall [Number]</h4>
+<p>	smail size of pages rendered from PDF, when book is small, default : 1024</p>
+<p>	&nbsp;</p>
+<h4 id="general_options_optionspagetexturesizetreshold_number">options.pageTextureSizeTreshold [Number]</h4>
+<p>	page size on screen when to start to use full page size, default : 1024</p>
+<p>	&nbsp;</p>
+<h4 id="general_options_optionsmobile_object">options.mobile [Object]</h4>
+<p>	Override any option for mobile devices so viewer on mobile can have different setup, for example</p>
+<pre class="prettyprint lang-js linenums">
+var options = {
+  pdfUrl:&quot;example.pdf&quot;,
+  skin:&quot;light&quot;
+}
+
+options.mobile = {
+  pageTextureSize:1500,
+  btnPrint:{enabled:false},
+  skin:&quot;dark&quot;
+}</pre>
+<p>	&nbsp;</p>
+<h4 id="general_options_optionsstartpage_number">options.startPage [Number]</h4>
+<p>	Start page, default:1</p>
+<p>	&nbsp;</p>
+<h4 id="general_options_optionsdeeplinkingprefix_string">options.deeplinkingPrefix [String]</h4>
+<p>	enable deeplinking by setting custom prefix for deeplinking hash. Deeplinking adds hash to the end of the url so you can link to certain page for example link to page 3 will end with #3</p>
+<h4 id="general_options__nbsp">&nbsp;</h4>
+<h4 id="general_options_optionsrighttoleft_boolean">options.rightToLeft [Boolean]</h4>
+<p>	Inverted viewer from right to left, default:false</p>
+<p>	&nbsp;</p>
+<h4 id="general_options_optionsthumbsize_number">options.thumbSize [Number]</h4>
+<p>	Page thumbnails height, default : 150</p>
+<p>	&nbsp;</p>
+<h4 id="general_options_optionsautoplayonstart_boolean">options.autoplayOnStart [Boolean]</h4>
+<p>	Enable autoplay on start, default : false</p>
+<p>	&nbsp;</p>
+<h4 id="general_options_optionsautoplayinterval_number">options.autoplayInterval [Number]</h4>
+<p>	Autoplay interval in ms, default : 3000</p>
+<p>	&nbsp;</p>
+<h4 id="general_options_optionstableofcontent_array">options.tableOfContent [Array]</h4>
+<p>	Custom table of content, array of objects, each object has &quot;title&quot; and &quot;page&quot;. Below is an example of custom table of content</p>
+<pre class="prettyprint lang-js linenums">
+[
+  {
+    title:&quot;Cover&quot;,
+    page:&quot;1&quot;,
+  },
+  {
+    title:&quot;Chapter 1&quot;,
+    page:&quot;5&quot;,
+  },
+  {<span style="font-family: Arial, Verdana, sans-serif;">
+</span>    title:&quot;Chapter 2&quot;,
+    page:&quot;11&quot;,
+  }
+]</pre>
+<p>	&nbsp;</p>
+<h4 id="general_options_optionslightbox_boolean">options.lightBox [Boolean]</h4>
+<div>
+	Display viewer in a lightbox overlay that is triggered with click, default : false</div>
+<div>
+	&nbsp;</div>
+<h4 id="general_options_optionslightboxopened_boolean">options.lightBoxOpened [Boolean]</h4>
+<div>
+	Open lightbox on page load, default : false</div>
+<div>
+	&nbsp;</div>
+<h4 id="general_options_optionslightboxfullscreen_boolean">options.lightBoxFullscreen [Boolean]</h4>
+<div>
+	Open lightbox in fullscreen, default : false</div>
+<div>
+	&nbsp;</div>
+<h4 id="general_options_optionslightboxresetonopen_boolean">options.lightboxResetOnOpen [Boolean]</h4>
+<div>
+	Always open lightbox on first page, default : true</div>
+<div>
+	&nbsp;</div>
+<h4 id="general_options_optionslightboxbackground_string">options.lightboxBackground [String]</h4>
+<div>
+	CSS for lightbox background, for example &#39;rgba(0,0,0,.5)&#39; or &#39;#F0F0F0&#39; or &#39;url(&quot;overlay.png&quot; ) repeat&#39;</div>
+<div>
+	&nbsp;</div>
+<h4 id="general_options_optionslightboxstartpage_number">options.lightboxStartPage [Number]</h4>
+<div>
+	Start page for lightbox</div>
+<script>
+</script><script>
+</script><script>
+</script><script>
+</script><script>
+</script><script>
+</script><script>
+</script><script>
+</script><script>
+</script><script>
+</script><script>
+</script><script>
+</script></section>
+<section id="menu_buttons">
+	<div class="page-header"><h3>Menu buttons</h3><hr class="notop"></div>
+<div>
+	All alvailable menu buttons are</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;&#39;currentPage&#39;,&nbsp; &#39;btnFirst&#39;,&nbsp; &#39;btnPrev&#39;,&nbsp; &#39;btnNext&#39;, &#39;btnLast&#39;, &#39;btnZoomIn&#39;, &#39;btnZoomOut&#39;, &#39;btnRotateLeft&#39;, &#39;btnRotateRight&#39;, &#39;btnAutoplay&#39;, &#39;btnSearch&#39;, &#39;btnSelect&#39;, &#39;btnBookmark&#39;, &#39;btnToc&#39;, &#39;btnThumbs&#39;, &#39;btnShare&#39;, &#39;btnPrint&#39;, &#39;btnDownloadPages&#39;, &#39;btnDownloadPdf&#39;, &#39;btnSound&#39;, &#39;btnExpand&#39;, &#39;btnClose&#39;&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	You can control each menu button appearence and functionality. Each button has properties</div>
+<div>
+	&nbsp;</div>
+<h4 id="menu_buttons_buttonenabled_boolean">button.enabled [Boolean]</h4>
+<p>	Boolean, true or false</p>
+<h4 id="menu_buttons_buttontitle_string">button.title [String]</h4>
+<p>	button title, for example &quot;Next Page&quot;</p>
+<h4 id="menu_buttons_buttonicon_string">button.icon [String]</h4>
+<p>	Font awesome CSS class, for example &quot;fa-angle-right&quot;. List of all Font awesome icons is here&nbsp;https://fontawesome.com/icons?d=gallery&amp;m=free</p>
+<h4 id="menu_buttons_buttonicon2_string">button.icon2 [String]</h4>
+<p>	Material icon name, for example &quot;chevron_right&quot;. List of all Material icons is here&nbsp;https://material.io/tools/icons/?style=baseline</p>
+<h4 id="menu_buttons_buttoniconalt_string">button.iconAlt [String]</h4>
+<p>	alternative Font awesome icon, for buttons that have &quot;toggle&quot; function like btnSound or btnExpand</p>
+<h4 id="menu_buttons_buttoniconalt2_string">button.iconAlt2 [String]</h4>
+<p>	alternative Material icon</p>
+<h4 id="menu_buttons_buttonhalign_string">button.hAlign [String]</h4>
+<p>	horizontal align, &quot;left&quot;, &quot;right&quot; or &quot;center&quot;, default horizontal align is &quot;center&quot;</p>
+<h4 id="menu_buttons_buttonvalign_string">button.vAlign [String]</h4>
+<p>	vertical align, &quot;top&quot; or &quot;bottom&quot;</p>
+<h4 id="menu_buttons_buttonorder_number">button.order [Number]</h4>
+<p>	button order, default is 0. To push button to left set button order to negative value, to push to right set button order to positive number</p>
+<div>
+	<h4 id="menu_buttons_buttonhideonmobile_boolean">button.hideOnMobile [Boolean]</h4>
+	<p>		hide button on mobile</p>
+</div>
+<div>
+	&nbsp;</div>
+<div>
+	All available buttons with default options:&nbsp;</div>
+<h4 id="menu_buttons_optionscurrentpage_nbsp_nbsp">options.currentPage&nbsp;&nbsp;</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: true,
+title: &quot;Current page&quot;,
+vAlign:&#39;top&#39;,
+hAlign:&#39;left&#39;,
+marginH:0,
+marginV:0,
+color:&#39;&#39;,
+background:&#39;&#39;
+}</pre>
+<h4 id="menu_buttons_optionsbtnnext_nbsp_nbsp">options.btnNext&nbsp;&nbsp;</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: true,
+title: &quot;Next page&quot;,
+icon: &quot;fa-angle-right&quot;,
+icon2: &quot;chevron_right&quot;
+}</pre>
+<h4 id="menu_buttons_optionsbtnlast">options.btnLast</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: false,
+title: &quot;Last page&quot;,
+icon: &quot;fa-angle-double-right&quot;,
+icon2: &quot;last_page&quot;
+}</pre>
+<h4 id="menu_buttons_optionsbtnprev">options.btnPrev</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: true,
+title: &quot;Previous page&quot;,
+icon: &quot;fa-angle-left&quot;,
+icon2: &quot;chevron_left&quot;
+}</pre>
+<h4 id="menu_buttons_optionsbtnfirst">options.btnFirst</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: false,
+title: &quot;First page&quot;,
+icon: &quot;fa-angle-double-left&quot;,
+icon2: &quot;first_page&quot;
+}</pre>
+<h4 id="menu_buttons_optionsbtnzoomin">options.btnZoomIn</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: true,
+title: &quot;Zoom in&quot;,
+icon: &quot;fa-plus&quot;,
+icon2: &quot;zoom_in&quot;
+}</pre>
+<h4 id="menu_buttons_optionsbtnzoomout">options.btnZoomOut</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: true,
+title: &quot;Zoom out&quot;,
+icon: &quot;fa-minus&quot;,
+icon2: &quot;zoom_out&quot;
+}</pre>
+<h4 id="menu_buttons_optionsbtnrotateleft">options.btnRotateLeft</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: false,
+title: &quot;Rotate left&quot;,
+icon: &quot;fas fa-undo&quot;
+}</pre>
+<h4 id="menu_buttons_optionsbtnrotateright">options.btnRotateRight</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: false,
+title: &quot;Rotate right&quot;,
+icon: &quot;fas fa-redo&quot;
+}</pre>
+<h4 id="menu_buttons_optionsbtnautoplay">options.btnAutoplay</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: true,
+title: &quot;Autoplay&quot;,
+icon: &quot;fa-play&quot;,
+icon2: &quot;play_arrow&quot;,
+iconAlt:&quot;fa-pause&quot;,
+iconAlt2:&quot;pause&quot;
+}</pre>
+<h4 id="menu_buttons_optionsbtnsearch">options.btnSearch</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: false,
+title: &quot;Search&quot;,
+icon: &quot;fas fa-search&quot;,
+icon2: &quot;search&quot;
+}</pre>
+<h4 id="menu_buttons_optionsbtnselect">options.btnSelect</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: true,
+title: &quot;Select tool&quot;,
+<span style="font-family: Arial, Verdana, sans-serif;">icon: &quot;fas fa-i-cursor&quot;,</span>
+<span style="font-family: Arial, Verdana, sans-serif;">icon2: &quot;text_format&quot;</span>
+}</pre>
+<h4 id="menu_buttons_optionsbtnbookmark">options.btnBookmark</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: false,
+title: &quot;Bookmark&quot;,
+icon: &quot;fas fa-bookmark&quot;,
+icon2: &quot;bookmark&quot;
+}</pre>
+<h4 id="menu_buttons_optionsbtntoc">options.btnToc</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: true,
+title: &quot;Table of content&quot;,
+icon: &quot;fa-list-ol&quot;
+}</pre>
+<h4 id="menu_buttons_optionsbtnthumbs">options.btnThumbs</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: true,
+title: &quot;Pages in&quot;,
+icon: &quot;fa-th-large&quot;
+}</pre>
+<h4 id="menu_buttons_optionsbtnshare">options.btnShare</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: true,
+title: &quot;Share&quot;,
+icon: &quot;fa-link&quot;
+}</pre>
+<h4 id="menu_buttons_optionsbtnprint">options.btnPrint</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: true,
+title: &quot;Print&quot;,
+icon: &quot;fa-print&quot;,
+icon2: &quot;print&quot;,
+hideOnMobile:true
+}</pre>
+<h4 id="menu_buttons_optionsbtndownloadpages">options.btnDownloadPages</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: true,
+title: &quot;Download pages&quot;,
+icon: &quot;fa-download&quot;,
+icon2: &quot;file_download&quot;,
+url: &quot;images/pages.zip&quot;,
+name: &quot;allPages.zip&quot;
+}</pre>
+<h4 id="menu_buttons_optionsbtndownloadpdf">options.btnDownloadPdf</h4>
+<pre class="prettyprint lang-js linenums">
+{
+forceDownload: false,
+enabled: true,
+title: &quot;Download PDF&quot;,
+icon: &quot;fa-file&quot;,
+icon2: &quot;picture_as_pdf&quot;,
+url: null,
+openInNewWindow: true,
+name: &quot;allPages.pdf&quot;
+}</pre>
+<h4 id="menu_buttons_optionsbtnsound">options.btnSound</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: true,
+title: &quot;Volume&quot;,
+icon: &quot;fa-volume-up&quot;,
+iconAlt: &quot;fa-volume-off&quot;,
+icon2: &quot;volume_up&quot;,
+iconAlt2: &quot;volume_mute&quot;,
+hideOnMobile:true
+}</pre>
+<h4 id="menu_buttons_optionsbtnexpand">options.btnExpand</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: true,
+title: &quot;Toggle fullscreen&quot;,
+icon: &quot;fa-expand&quot;,
+icon2: &quot;fullscreen&quot;,
+iconAlt: &quot;fa-compress&quot;,
+iconAlt2: &quot;fullscreen_exit&quot;
+}</pre>
+<h4 id="menu_buttons_optionsbtnclose">options.btnClose</h4>
+<pre class="prettyprint lang-js linenums">
+{
+title: &quot;Close&quot;, 
+icon: &quot;fa-times&quot;, 
+icon2: &quot;close&quot;, 
+hAlign:&#39;right&#39;, 
+vAlign:&#39;top&#39; 
+}
+</pre>
+</section>
+<section id="share_buttons">
+	<div class="page-header"><h3>Share buttons</h3><hr class="notop"></div>
+<h4 id="share_buttons_optionsgoogle_plus">options.google_plus</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: true,
+url: null
+}</pre>
+<div>
+	&nbsp;</div>
+<h4 id="share_buttons_optionstwitter">options.twitter</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: true,
+url: null,
+description: null
+}</pre>
+<div>
+	&nbsp;</div>
+<h4 id="share_buttons_optionsfacebook">options.facebook</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: true,
+load_sdk: true,
+url: null,
+app_id: null,
+title: null,
+caption: null,
+description: null,
+image: null
+}</pre>
+<div>
+	&nbsp;</div>
+<h4 id="share_buttons_optionspinterest">options.pinterest</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: true,
+url: null,
+image: null,
+description: null
+}</pre>
+<p>	&nbsp;</p>
+<h4 id="share_buttons_optionsemail">options.email</h4>
+<pre class="prettyprint lang-js linenums">
+{
+enabled: true,
+title: null,
+description: null
+}</pre>
+<script>
+</script><script>
+</script><script>
+</script></section>
+<section id="ui">
+	<div class="page-header"><h3>UI</h3><hr class="notop"></div>
+<p>
+	Defautl UI is defined in the CSS file so you can easily customize the Viewer UI. There are 4 pre-made UI layouts available, that can be selected with option&nbsp;</p>
+<p>
+	For example, to use layout 2 initialize the plugin like this</p>
+<pre class="prettyprint lang-js linenums">
+$(&quot;#container&quot;).flipBook({
+pdfUrl: ... ,
+layout:2
+})</pre>
+<p>
+	&nbsp;</p>
+<p>
+	You can customize the UI through various options by overriding the default options.</p>
+<pre class="prettyprint lang-js linenums">
+$(&quot;#container&quot;).flipBook({
+pdfUrl: ... ,
+layout:3,
+btnColor:&quot;#CCC&quot;,
+menu2Transparent:true,
+sideNavigationButtons:false,
+skin:&quot;dark&quot;,
+icons:&#39;material&#39;
+})</pre>
+<p>
+	&nbsp;</p>
+<p>
+	Here is list of all options to customize the UI</p>
+<p>
+	&nbsp;</p>
+<h4 id="ui_optionslayout_number">options.layout [Number]</h4>
+<p>
+	Viewer theme, 1 - 5</p>
+<p>
+	&nbsp;</p>
+<h4 id="ui_optionsicons_string">options.icons [String]</h4>
+<p>
+	Viewer icon set, &#39;material&#39; or &#39;fontawesome&#39;, default : &#39;fontawesome&#39;</p>
+<p>
+	&nbsp;</p>
+<h4 id="ui_optionsbackgroundcolor_string">options.backgroundColor [String]</h4>
+<p>
+	Viewer background, this can be set to any CSS, for exmaple &quot;#ccc&quot; or &quot;rgba(20,50,30,1.0)&quot; or &#39;url(&quot;bgimage.jpg&quot;)&#39;</p>
+<p>
+	&nbsp;</p>
+<h4 id="ui_optionsbackgroundimage_string">options.backgroundImage [String]</h4>
+<p>
+	Viewer background image url, default : null</p>
+<p>
+	&nbsp;</p>
+<h4 id="ui_optionsbackgroundpattern_string">options.backgroundPattern [String]</h4>
+<p>
+	Url of background image that will be repeated, default : null</p>
+<p>
+	&nbsp;</p>
+<h4 id="ui_optionsbackgroundtransparent_boolean">options.backgroundTransparent [Boolean]</h4>
+<p>
+	If the flipbook container have transparent background</p>
+<p>
+	default:false</p>
+<p>
+	&nbsp;</p>
+<h4 id="ui_optionsskin_string">options.skin [String]</h4>
+<p>
+	&quot;light&quot; or &quot;dark&quot;, default : &quot;light&quot;</p>
+<p>
+	&nbsp;</p>
+<h4 id="ui_optionssidenavigationbuttons_boolean">options.sideNavigationButtons [Boolean]</h4>
+<p>
+	Show side navigation buttons</p>
+<p>
+	default : true</p>
+<p>
+	&nbsp;</p>
+<h4 id="ui_optionshidemenu_boolean">options.hideMenu [Boolean]</h4>
+<p>
+	Hides bottom menu</p>
+<p>
+	default : false</p>
+<p>
+	&nbsp;</p>
+<h4 id="ui_optionsmenumargin_string">options.menuMargin [String]</h4>
+<div>
+	default : 0</div>
+<div>
+	&nbsp;</div>
+<h4 id="ui_optionsmenupadding_string">options.menuPadding [String]</h4>
+<div>
+	default : 0</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<h4 id="ui_optionsmenushadow_string">options.menuShadow [String]</h4>
+<div>
+	bottom menu shadow&nbsp;(CSS value)</div>
+<div>
+	&nbsp;</div>
+<div>
+	default : &#39;&#39;</div>
+<div>
+	&nbsp;</div>
+<h4 id="ui_optionsmenubackground_string">options.menuBackground [String]</h4>
+<p>
+	bottom menu background (CSS value)</p>
+<p>
+	default : &quot;&quot;</p>
+<p>
+	&nbsp;</p>
+<h4 id="ui_optionsmenuoverbook_boolean">options.menuOverBook [Boolean]</h4>
+<p>
+	bottom menu covers the book layer</p>
+<div>
+	default : false</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<h4 id="ui_optionsmenutransparent_boolean">options.menuTransparent [Boolean]</h4>
+	<p>
+		bottom menu has no background, buttons on transparent menu will have different style (floatingBtnColor and floatingBtnBackground)</p>
+	<div>
+		default : false</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<h4 id="ui_optionsmenufloating_boolean">options.menuFloating [Boolean]</h4>
+		<p>
+			bottom menu is not full width but centered</p>
+		<div>
+			default : false</div>
+	</div>
+</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<h4 id="ui_optionsmenu2margin_string">options.menu2Margin [String]</h4>
+	<div>
+		default : 0</div>
+	<div>
+		&nbsp;</div>
+	<h4 id="ui_optionsmenu2padding_string">options.menu2Padding [String]</h4>
+	<div>
+		default : 0</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<h4 id="ui_optionsmenu2shadow_string">options.menu2Shadow [String]</h4>
+	<div>
+		top menu shadow&nbsp;(CSS value)</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		default : &#39;&#39;</div>
+	<div>
+		&nbsp;</div>
+	<h4 id="ui_optionsmenu2background_string">options.menu2Background [String]</h4>
+	<p>
+		top menu background (CSS value)</p>
+	<p>
+		default : &quot;&quot;</p>
+	<p>
+		&nbsp;</p>
+	<h4 id="ui_optionsmenu2overbook_boolean">options.menu2OverBook [Boolean]</h4>
+	<p>
+		top menu&nbsp;covers the book layer</p>
+	<div>
+		default : false</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<h4 id="ui_optionsmenu2transparent_boolean">options.menu2Transparent [Boolean]</h4>
+		<p>
+			top menu has no background, buttons on transparent menu will have different style (floatingBtnColor and floatingBtnBackground)</p>
+		<div>
+			default : true</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<h4 id="ui_optionsmenu2floating_boolean">options.menu2Floating [Boolean]</h4>
+			<p>
+				top menu is not full width but centered</p>
+			<div>
+				default : false</div>
+		</div>
+	</div>
+	<div>
+		&nbsp;</div>
+</div>
+<h4 id="ui_optionsbtnorder_array">options.btnOrder [Array]</h4>
+<p>
+	can be used to order buttons and set buttons that will be displayed in the menu.</p>
+<p>
+	default : [&nbsp; &#39;currentPage&#39;,&nbsp; &#39;btnFirst&#39;,&nbsp; &#39;btnPrev&#39;,&nbsp; &#39;btnNext&#39;, &#39;btnLast&#39;, &#39;btnZoomIn&#39;, &#39;btnZoomOut&#39;, &#39;btnRotateLeft&#39;, &#39;btnRotateRight&#39;, &#39;btnAutoplay&#39;, &#39;btnSearch&#39;, &#39;btnSelect&#39;, &#39;btnBookmark&#39;, &#39;btnToc&#39;, &#39;btnThumbs&#39;, &#39;btnShare&#39;, &#39;btnPrint&#39;, &#39;btnDownloadPages&#39;, &#39;btnDownloadPdf&#39;, &#39;btnSound&#39;, &#39;btnExpand&#39;, &#39;btnClose&#39; ]</p>
+<p>
+	&nbsp;</p>
+<h4 id="ui_optionsbtnsize_number">options.btnSize [Number]</h4>
+<div>
+	default : 16&nbsp;</div>
+<div>
+	&nbsp;</div>
+<h4 id="ui_optionsbtnradius_number">options.btnRadius [Number]</h4>
+<div>
+	default : 2</div>
+<div>
+	&nbsp;</div>
+<h4 id="ui_optionsbtnmargin_number">options.btnMargin [Number]</h4>
+<div>
+	default : 2</div>
+<div>
+	&nbsp;</div>
+<h4 id="ui_optionsbtnshadow_string">options.btnShadow [String]</h4>
+<p>
+	button shadow&nbsp;(CSS value)</p>
+<div>
+	default : &quot;&quot;</div>
+<div>
+	&nbsp;</div>
+<h4 id="ui_optionsbtntextshadow_string">options.btnTextShadow [String]</h4>
+<p>
+	button text shadow (CSS value)</p>
+<div>
+	default : &quot;&quot;</div>
+<div>
+	&nbsp;</div>
+<h4 id="ui_optionsbtnborder_string">options.btnBorder [String]</h4>
+<p>
+	button border (CSS value)</p>
+<div>
+	default : &quot;&quot;</div>
+<div>
+	&nbsp;</div>
+<h4 id="ui_optionsbtncolor_string">options.btnColor [String]</h4>
+<p>
+	button color (CSS value)</p>
+<div>
+	default : &quot;&quot;</div>
+<div>
+	&nbsp;</div>
+<h4 id="ui_optionsbtnbackground_string">options.btnBackground [String]</h4>
+<p>
+	button background (CSS value)</p>
+<div>
+	default : &quot;none&quot;</div>
+<div>
+	&nbsp;</div>
+<h4 id="ui_optionssidebtnsize_number">options.sideBtnSize [Number]</h4>
+<div>
+	default : 30</div>
+<div>
+	&nbsp;</div>
+<h4 id="ui_optionssidebtnradius_number">options.sideBtnRadius [Number]</h4>
+<p>
+	default : 0</p>
+<p>
+	&nbsp;</p>
+<h4 id="ui_optionssidebtnmargin_number">options.sideBtnMargin [Number]</h4>
+<div>
+	default : 0</div>
+<div>
+	&nbsp;</div>
+<h4 id="ui_optionssidebtnpaddingv_number">options.sideBtnPaddingV [Number]</h4>
+<div>
+	default : 5</div>
+<div>
+	&nbsp;</div>
+<h4 id="ui_optionssidebtnpaddingh_number">options.sideBtnPaddingH [Number]</h4>
+<div>
+	default : 0</div>
+<div>
+	&nbsp;</div>
+<h4 id="ui_optionssidebtnshadow_string">options.sideBtnShadow [String]</h4>
+<p>
+	side button shadow (CSS value)</p>
+<div>
+	default : &quot;&quot;</div>
+<div>
+	&nbsp;</div>
+<h4 id="ui_optionssidebtntextshadow_string">options.sideBtnTextShadow [String]</h4>
+<p>
+	side button text shadow (CSS value)</p>
+<div>
+	default : &quot;&quot;</div>
+<div>
+	&nbsp;</div>
+<h4 id="ui_optionssidebtnborder_string">options.sideBtnBorder [String]</h4>
+<p>
+	side button border (CSS value)</p>
+<div>
+	default : &quot;&quot;</div>
+<div>
+	&nbsp;</div>
+<h4 id="ui_optionssidebtncolor_string">options.sideBtnColor [String]</h4>
+<p>
+	side button color (CSS value)</p>
+<div>
+	default :&nbsp;#FFF&#39;</div>
+<div>
+	&nbsp;</div>
+<h4 id="ui_optionssidebtnbackground_string">options.sideBtnBackground [String]</h4>
+<p>
+	side button background (CSS value)</p>
+<div>
+	default : &quot;rgba(0,0,0,.3)&quot;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<h4 id="ui_optionssidemenuoverbook_boolean">options.sideMenuOverBook [Boolean]</h4>
+	<p>
+		sidebar (Thumbnails, Table of Content) covers the book layer</p>
+	<div>
+		default : true</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<h4 id="ui_optionssidemenuovermenu_boolean">options.sideMenuOverMenu [Boolean]</h4>
+		<p>
+			sidebar (Thumbnails, Table of Content) covers the bottom menu</p>
+		<div>
+			default : false</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<h4 id="ui_optionssidemenuovermenu2_boolean">options.sideMenuOverMenu2 [Boolean]</h4>
+			<p>
+				sidebar (Thumbnails, Table of Content) covers the top menu</p>
+			<div>
+				default : true</div>
+		</div>
+	</div>
+</div>
+<script>
+</script><script>
+</script><script>
+</script><script>
+</script><script>
+</script><script>
+</script><script>
+</script></section>
+<section id="adding_custom_html_content_to_pages">
+	<div class="page-header"><h3>Adding custom HTML content to pages</h3><hr class="notop"></div>
+<div>
+	You can add any HTML content to a page. For that you need to pass &quot;pages&quot; object to pluign constructor. For example add some text to page 2 and iframe to page 4</div>
+<pre class="prettyprint lang-js linenums">
+var pages = []
+
+pages[1] = {
+htmlContent:&#39;&lt;p&gt;Some text&lt;/p&gt;&lt;div style=&quot;position:absolute;top:100px;left:200px;&quot;&gt;div with custom css&lt;/div&gt;&#39;
+}
+pages[3] = {
+htmlContent:&#39;&lt;iframe width=&quot;640&quot; height=&quot;360&quot; src=&quot;https://www.youtube.com/embed/KDP0dCZ6M68&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen&gt;&lt;/iframe&gt;&#39;
+}</pre>
+<div>
+	&nbsp;</div>
+<div>
+	Then you pass pdfUrl and pages to plugin constructor</div>
+<pre class="prettyprint lang-js linenums">
+$(document).ready(function () {
+  $(&quot;#book1&quot;).flipBook({
+    pdfUrl:&quot;example.pdf&quot;,
+    pages:pages
+<span style="font-family: Arial, Verdana, sans-serif;">  }</span>);
+})</pre>
+</section>
+<section id="faq">
+	<div class="page-header"><h3>FAQ</h3><hr class="notop"></div>
+<article>
+	<div>
+		<div>
+			<h4 id="faq_can_i_load_a_pdf_images_from_another_server_cross_domain_request_">Can I load a PDF/images from another server (cross domain request)?</h4>
+		</div>
+	</div>
+	<div>
+		<div>
+			<p>				By default PDF and images needs to be on the same server. To use resources from another domain you need to add Access-Control-Allow-Origin header to server response, for example to allow&nbsp;<a href="http://foo.example/" rel="nofollow">http://foo.example</a>&nbsp;to load the resources you need to add header</p>
+			<pre>
+Access-Control-Allow-Origin: http://foo.example</pre>
+		</div>
+	</div>
+</article>
+<article>
+	<div>
+		<div>
+			<h4 id="faq_flipbook_is_not_working">Flipbook is not working</h4>
+		</div>
+	</div>
+	<div>
+		<div>
+			<p>				Please check your browser console for errors. In most cases the problem is that flipbook has no PDF/images specified, or is trying to load PDF/images from another domain. There might also be other javascript errors on the page, coming from another plugin. Try to disable other plugins to see if another plugin is causing the problem.</p>
+		</div>
+	</div>
+</article>
+<article>
+	<div>
+		<div>
+			<h4 id="faq_mixed_content_error_in_browser_console">Mixed content error in browser console</h4>
+		</div>
+	</div>
+	<div>
+		<p>			If you get error that looks like this</p>
+		<pre>
+Mixed Content: The page at &#39;https://www....&#39; was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint &#39;http://www....&#39;. This request has been blocked; the content must be served over HTTPS.</pre>
+		<p>			that means that your page is serverd over HTTPS so you need to load resources over HTTPS also, so you need to update pdf url or page image urls and replace http:// with https://</p>
+	</div>
+</article>
+<p>	&nbsp;</p>
+</section>
+
+
+
+    <hr />
+
+<footer>
+    <p>Copyright creativeinteractivemedia 2019 made with the <a href="http://rxa.li/documenter">Documenter v2.0</a></p>
+</footer>
+
+</div><!-- /container --> 
+
+<!-- Le javascript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script>document.createElement('section');var duration='500',easing='swing';</script>
+<script src="assets/js/jquery.js"></script> 
+<script src="assets/js/jquery.scrollTo.js"></script>
+<script src="assets/js/jquery.easing.js"></script>
+<script src="assets/js/scripts.js"></script> 
+<script src="assets/js/google-code-prettify/prettify.js"></script> 
+<script src="assets/js/bootstrap-min.js"></script> 
+</body>
+</html>

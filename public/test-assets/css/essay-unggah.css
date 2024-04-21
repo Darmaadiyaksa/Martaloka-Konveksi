@@ -1,0 +1,54 @@
+.header-soal .logo-unmas {
+  width: 86px;
+  height: 97px;
+  margin-right: 15px;
+  float: left;
+}
+
+.header-soal p {
+  color: #000;
+}
+
+.header-soal .text-header {
+  font-family: Arial, Helvetica, sans-serif;
+  float: left;
+}
+
+.header-soal .text-header .unmas {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 0px;
+}
+
+.header-soal .text-header .fakultas {
+  font-weight: bold;
+  font-size: 22px;
+  margin-top: -12px;
+}
+
+.header-soal .text-header .sekretariat {
+  font-size: 12px;
+  margin-top: -12px;
+  margin-bottom: 6px;
+}
+
+.header-soal .text-header .telp-fax {
+  font-size: 12px;
+  margin-top: -10px;
+  margin-bottom: 6px;
+}
+
+.header-soal .text-header .web-email {
+  font-size: 11px;
+  margin-top: -10px;
+  margin-bottom: 0;
+}
+
+.logo-gsi {
+  width: 80px;
+  margin-right: 15px;
+}
+
+.logo-kan {
+  width: 180px;
+}
